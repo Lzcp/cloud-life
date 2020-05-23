@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CloudLoginModule } from './pages/cloud-login/cloud-login.module';
 import { AppRoutingModule } from './app-routing.component';
+import { CloudLoginModule } from './pages/cloud-login/cloud-login.module';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';

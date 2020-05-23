@@ -15,7 +15,7 @@
             width: 1000px;
             border: none;
             background-color: #fff;
-            min-height: 400px;
+            min-height: 500px;
             .login-content {
                 width: 320px;
                 margin: 0 auto;
@@ -34,5 +34,26 @@
 }
 
 .login-user {
-    margin-top: 20px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.login-submit button{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.login-agree {
+    margin-top: 15px;
+}
+
+.login-check {
+    position: absolute;
+    right: -150px;
+    top: 5px;
+    color: red;
+}
+
+::ng-deep .ant-popover-buttons {
+    display: none !important;
 }

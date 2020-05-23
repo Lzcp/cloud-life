@@ -1,6 +1,6 @@
 <div class="login">
     <div class="login-header">
-
+        <!-- 后期扩展功能 -->
     </div>
     <div class="login-body">
         <div class="login-form">
@@ -9,15 +9,37 @@
                     欢迎注册生活云服务
                 </div>
                 <div class="login-user">
-                    <input [type]="'text'" nz-input placeholder="设置会员名" />
+                    <input [type]="'text'" nz-popconfirm
+                        nzPopconfirmTitle="会员名为5-50字符，需要包含字母或者汉字"
+                        nzPopconfirmPlacement="right"
+                        [(ngModel)]="cloudName"
+                        (change)="nameReg()"
+                        nz-input placeholder="设置会员名" />
+                        <div *ngIf="nameCheck" class="login-check">名称设置不符合要求</div>
                 </div>
                 <div class="login-user">
-                    <input [type]="'password'" nz-input placeholder="设置你的登录密码" [(ngModel)]="passwordStart" />
+                    <input [type]="'password'" nz-popconfirm
+                    nzPopconfirmTitle="6-20个字符，只能包含字母、数字以及标点符号，字母、数字、标点符号至少包含两种。"
+                    nzPopconfirmPlacement="bottom"
+                    (change)="posswordReg()"
+                    nz-input placeholder="设置你的登录密码" [(ngModel)]="passwordStart" />
+                    <div *ngIf="posswordCheck" class="login-check">密码设置不符合要求</div>
                 </div>
                 <div class="login-user">
-                    <input [type]="'password'" nz-input placeholder="请在此输入你的密码" [(ngModel)]="passwordEnd" />
+                    <input [type]="'password'" nz-input placeholder="请在此输入你的密码"
+                        (change)="sameCheck()"
+                        [(ngModel)]="passwordEnd" />
+                    <div *ngIf="samePass" class="login-check">确认密码不相同</div>
                 </div>
-                <button nz-button nzType="primary" nzSize="large">Primary</button>
+                <div class="login-submit">
+                    <button nz-button nzType="primary" nzSize="large"  (click)="loginSumit()">同意条款并注册</button>
+                </div>
+                <div class="login-agree">
+                    <div style="text-align: left;">
+                        <label nz-checkbox [(ngModel)]="agree">《法律声明和隐私权政策》</label>
+                        <a href=""></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
