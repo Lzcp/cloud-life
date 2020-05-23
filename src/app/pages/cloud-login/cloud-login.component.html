@@ -1,0 +1,24 @@
+<div class="login">
+    <div class="login-header">
+
+    </div>
+    <div class="login-body">
+        <div class="login-form">
+            <div class="login-content">
+                <div class="login-title">
+                    欢迎注册生活云服务
+                </div>
+                <div class="login-user">
+                    <input [type]="'text'" nz-input placeholder="设置会员名" />
+                </div>
+                <div class="login-user">
+                    <input [type]="'password'" nz-input placeholder="设置你的登录密码" [(ngModel)]="passwordStart" />
+                </div>
+                <div class="login-user">
+                    <input [type]="'password'" nz-input placeholder="请在此输入你的密码" [(ngModel)]="passwordEnd" />
+                </div>
+                <button nz-button nzType="primary" nzSize="large">Primary</button>
+            </div>
+        </div>
+    </div>
+</div>

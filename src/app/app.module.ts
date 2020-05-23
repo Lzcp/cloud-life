@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CloudLoginModule } from './pages/cloud-login/cloud-login.module';
+import { AppRoutingModule } from './app-routing.component';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -18,8 +20,10 @@ registerLocaleData(en);
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CloudLoginModule,
     BrowserAnimationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
