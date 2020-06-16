@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.component';
 import { CloudLoginModule } from './pages/cloud-login/cloud-login.module';
-
+import { LoginGuardService } from './service/commonService';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +27,7 @@ registerLocaleData(en);
     CloudLoginModule,
     BrowserAnimationsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, LoginGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
