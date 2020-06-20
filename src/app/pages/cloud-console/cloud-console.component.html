@@ -1,1 +1,10 @@
 <p>首页</p>
+<ng-container *ngFor="let item of [1,2,3]; let i=index">
+    <div (click)="showStatus(i)">
+        <app-card [index]='i' [activeIndex]='activeIndex'>
+    
+        </app-card>
+    </div>
+</ng-container>
+
+
